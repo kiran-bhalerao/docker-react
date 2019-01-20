@@ -6,3 +6,10 @@ before_install:
 
 script: 
   - docker run kiranbhalerao123/docker-react npm run test -- --coverage
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_API_KEY
+  app: "kiranbhalerao-docker-react"
+  on: master
